@@ -13,6 +13,7 @@ from milestone_2 import ask_user
 # imported from milestone_2
 ask_user()
 
+
 while True:
     guess = input("Please guess the letter ")
     
@@ -20,6 +21,7 @@ while True:
         break
     else:
         print("Invalid letter. Please enter a single alphabetical character.") 
+
 
 
 
