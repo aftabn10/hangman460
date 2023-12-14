@@ -1,4 +1,4 @@
-# Hangman Game
+# Hangman Game - Built in Python
 import random
 
 # 1.  Define a list of possible word 
