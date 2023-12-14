@@ -1,3 +1,4 @@
+from milestone_2 import ask_user
 # Step 1:
 # Create a while loop and set the condition to True. Setting the condition to True ensures that the code runs continuously.
 # In the body of the loop, write the code required for the following steps.
@@ -9,6 +10,9 @@
 # If the guess passes the checks, break out of the loop.
 # Step 5:
 # If the guess does not pass the checks, then print a message saying "Invalid letter. Please, enter a single alphabetical character."
+# imported from milestone_2
+ask_user()
+
 while True:
     guess = input("Please guess the letter ")
     
@@ -16,6 +20,8 @@ while True:
         break
     else:
         print("Invalid letter. Please enter a single alphabetical character.") 
+
+
 
 
 
