@@ -11,19 +11,27 @@ from milestone_2 import ask_user
 # Step 5:
 # If the guess does not pass the checks, then print a message saying "Invalid letter. Please, enter a single alphabetical character."
 # imported from milestone_2
-ask_user()
+word = ask_user()
+print(type(word))
 
+single_word = list(word)
 
 while True:
-    guess = input("Please guess the letter ")
+    guess = input("Please guess the letter: ")
     
     if len(guess) == 1 and guess.isalpha():
+        # Added flag in order to move onto the next set of if statements, other was exiting due to break
+        valid_guess = True
         break
     else:
         print("Invalid letter. Please enter a single alphabetical character.") 
 
-
-
+#Now check if the user has guessed the 'right' letter from the word 
+if valid_guess:   
+    if guess in single_word:
+        print(f"Good guess! {guess} is in the word.")
+    else:
+        print(f"Sorry {guess} is not in the word. Try again.")
 
 
 

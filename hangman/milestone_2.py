@@ -25,6 +25,8 @@ def ask_user():
     word = random.choice(word_list)
     print(word)
 
+    return word
+
 # 3.  Ask the user for an input
 # 3.1 Using the input function, ask the user to enter a single letter.
 # 3.2 Assign the input to a variable called guess.
@@ -35,4 +37,4 @@ def ask_user():
 # 4.3 Create an else block that prints "Oops! That is not a valid input." if the preceding conditions are not met.
 # added this code to avoid ask_user script being run twice in case its imported
 if __name__ == "__main__":
-    ask_user()
+    word = ask_user()
