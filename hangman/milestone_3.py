@@ -51,16 +51,15 @@ def check_guess(guess):
     else:
         print(f"Sorry {guess} is not in the word. Try again.")
 
-check_guess()
-
 # The ask_for_input function.
 def ask_for_input():
+    check_guess('a')
     while True:
         guess = input("Please guess the letter: ")
         
         if len(guess) == 1 and guess.isalpha():
         # Added flag in order to move onto the next set of if statements, other was exiting due to break
-            valid_guess = True
+            check_guess(guess)
             break
         else:
             print("Invalid letter. Please enter a single alphabetical character.") 
