@@ -9,10 +9,12 @@ import random
 
 class Hangman:
     """
-        Initialize the class with a word list and number of lives.
+    This class is used to setup the Hangman Game.
     """
     def __init__(self, word_list, num_lives=5):
-
+        """
+        Initialize the class with a word list and number of lives with a default value of 5.
+        """  
 # Step 3:
 # Initialise the following attributes:
 #     word: The word to be guessed, picked randomly from the word_list. Remember to import the random module into your script
@@ -46,6 +48,14 @@ class Hangman:
 # In the body of the if statement, print a message saying "Good guess! {guess} is in the word."
 
     def check_guess(self, guess):
+        """
+        This function is used to check the players guess for the word.
+
+        Args:
+            guess is what gets passed as the value from the player.
+        Returns:
+            If guess is in the word, then get a positive message, otherwise get asked to try again and you lose a life.
+        """
         guess = guess.lower()
 
         if guess in self.word:
@@ -92,6 +102,14 @@ class Hangman:
 # so that the letter can be appended to the list_of_guesses in both conditions.
 
     def ask_for_input(self):
+        """
+        This function is used to ask for an input from the player.
+
+        Returns:
+            If conditions are not met, then will print a message to the player.
+            If conditions are met but its a guess that already exists in the list of guesses then will let the player know.
+            If conditions are met then will run the check_guess function and pass the guess variable and also append the value to the list of guesses.
+        """
         print(self.word)
         guess = input ("Please guess a letter: ")
 
