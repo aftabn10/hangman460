@@ -122,5 +122,6 @@ class Hangman:
             self.check_guess(guess)
             self.list_of_guesses.append(guess) 
 
+
 game_instance = Hangman(["apple", "banana", "orange"])  # Example usage
 game_instance.ask_for_input()
