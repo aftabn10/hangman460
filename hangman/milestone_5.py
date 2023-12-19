@@ -7,9 +7,7 @@ class Hangman:
     def __init__(self, word_list, num_lives=5):
         """
         Initialize the class with a word list and number of lives with a default value of 5.
-        """ 
-
-        """
+        
         Parameters:
         - word_list (list): A list of words.
         - num_lives - 5 number of lives.
@@ -25,7 +23,7 @@ class Hangman:
         self.num_letters = len(set(self.word))
         self.list_of_guesses = []
 
-def check_guess(self, guess):
+    def check_guess(self, guess):
         """
         This function is used to check the players guess for the word.
 
@@ -51,7 +49,7 @@ def check_guess(self, guess):
                 self.word_guessed = ''.join(word_guessed_list)
                 self.num_letters -= 1
         
-def ask_for_input(self):
+    def ask_for_input(self):
         """
         This function is used to ask for an input from the player.
 
@@ -60,7 +58,7 @@ def ask_for_input(self):
             If conditions are met but its a guess that already exists in the list of guesses then will let the player know.
             If conditions are met then will run the check_guess function and pass the guess variable and also append the value to the list of guesses.
         """
-        print(self.word)
+        print(self.word_guessed)
         guess = input ("Please guess a letter: ")
 
         # Used 'or not' to print if either condition is True 
@@ -72,12 +70,28 @@ def ask_for_input(self):
             self.check_guess(guess)
             self.list_of_guesses.append(guess) 
 
-    def play_game(self, word_list):
-        self.num_lives = 5
+def play_game(word_list):
+    """
+    This function is used to play the Hangman game.
+
+    Args:
+        word_list (list): A list of word for the game.
+    """
+    num_lives = 5
+    game = Hangman(word_list, num_lives)
 
     while True:
-        if self.num_lives == 0:
-             
+        if game.num_lives == 0:
+            print("You lost!")
+            break
+        elif game.num_letters > 0:
+            game.ask_for_input()
+        else:
+            print("Congratulations. You won the game!")
+            break
 
+# Specify the word list
+word_list = ['apple', 'grapes', 'pineapple', 'oranges', 'peaches']
 
-game = Hangman(word_list, num_lives)
+# Call the play_game function and pass the word_list
+play_game(word_list)
